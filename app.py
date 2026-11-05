@@ -42,3 +42,14 @@ async def create_task(request: Request):
     if body is None: return JSONResponse({"error": "A non-empty title is required"}, status_code=400)
     return repo.create(body["title"])
 
+@app.put("/tasks/{task_id}", summary="Update a task", openapi_extra={"requestBody":{"required":True,"content":{"application/json":{"schema":{"type":"object","properties":{"title":{"type":"string"},"done":{"type":"boolean"}}}}}}})
+async def update_task(task_id: int, request: Request):
+    body = await valid_body(request, True)
+    if body is None: return JSONResponse({"error": "Invalid task update"}, status_code=400)
+    task = repo.update(task_id, body)
+    return task if task else JSONResponse({"error": f"Task {task_id} not found"}, status_code=404)
+
+@app.delete("/tasks/{task_id}", status_code=204, summary="Delete a task")
+def delete_task(task_id: int):
+    if not repo.delete(task_id): return JSONResponse({"error": f"Task {task_id} not found"}, status_code=404)
+    return Response(status_code=204)
