@@ -22,3 +22,7 @@ Result: PASS full CRUD: 200/201/204/400/404
 ## Stage 5
 Command: `python checkpoint.py`
 Result: PASS full CRUD: 200/201/204/400/404
+
+## Stage 6
+Command: `python checkpoint.py`
+Result: PASS full CRUD: 200/201/204/400/404
