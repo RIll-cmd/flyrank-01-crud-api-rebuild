@@ -10,3 +10,5 @@ with TestClient(app) as c:
   kwargs={'json':{'title':'missing'}} if method=='put' else {}
   r=getattr(c,method)('/tasks/999',**kwargs); assert r.status_code==404 and 'error' in r.json()
  print('PASS full CRUD: 200/201/204/400/404')
+ assert c.get('/docs').status_code==200
+ assert len(c.get('/openapi.json').json()['paths'])==4

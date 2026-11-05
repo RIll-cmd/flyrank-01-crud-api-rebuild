@@ -10,7 +10,7 @@ async def lifespan(app):
     repo.initialize()
     yield
 
-app = FastAPI(title="Task API", lifespan=lifespan, docs_url=None, redoc_url=None, openapi_url=None)
+app = FastAPI(title="Task API", lifespan=lifespan)
 
 @app.get("/", summary="Describe the API")
 def root():
