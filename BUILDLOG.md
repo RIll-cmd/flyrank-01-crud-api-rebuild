@@ -6,3 +6,7 @@ Result: PASS hello HTTP 200
 ## Stage 1
 Command: `python checkpoint.py`
 Result: PASS root and health JSON
+
+## Stage 2
+Command: `python checkpoint.py`
+Result: PASS list, single, missing JSON 404

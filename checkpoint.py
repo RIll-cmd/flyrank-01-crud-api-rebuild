@@ -1,6 +1,7 @@
 from fastapi.testclient import TestClient
 from app import app
 with TestClient(app) as c:
- assert c.get("/").json()
- assert c.get("/health").json()=={"status":"ok"}
- print("PASS root and health JSON")
+ assert len(c.get("/tasks").json())==3
+ assert c.get("/tasks/1").status_code==200
+ assert c.get("/tasks/99").status_code==404
+ print("PASS list, single, missing JSON 404")
