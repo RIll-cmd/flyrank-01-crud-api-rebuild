@@ -1,7 +1,7 @@
 curl.exe -sS -i -X POST http://127.0.0.1:8101/tasks -H Content-Type: application/json -d {"title": "curl checkpoint"}
 
 HTTP/1.1 201 Created
-date: Thu, 05 Nov 2026 07:34:37 GMT
+date: Thu, 05 Nov 2026 07:38:07 GMT
 server: uvicorn
 content-length: 47
 content-type: application/json
@@ -11,7 +11,7 @@ content-type: application/json
 curl.exe -sS -i -X GET http://127.0.0.1:8101/tasks/4
 
 HTTP/1.1 200 OK
-date: Thu, 05 Nov 2026 07:34:37 GMT
+date: Thu, 05 Nov 2026 07:38:07 GMT
 server: uvicorn
 content-length: 47
 content-type: application/json
@@ -21,7 +21,7 @@ content-type: application/json
 curl.exe -sS -i -X PUT http://127.0.0.1:8101/tasks/4 -H Content-Type: application/json -d {"done": true}
 
 HTTP/1.1 200 OK
-date: Thu, 05 Nov 2026 07:34:37 GMT
+date: Thu, 05 Nov 2026 07:38:07 GMT
 server: uvicorn
 content-length: 46
 content-type: application/json
@@ -31,7 +31,7 @@ content-type: application/json
 curl.exe -sS -i -X DELETE http://127.0.0.1:8101/tasks/4
 
 HTTP/1.1 204 No Content
-date: Thu, 05 Nov 2026 07:34:37 GMT
+date: Thu, 05 Nov 2026 07:38:07 GMT
 server: uvicorn
 
 
@@ -39,7 +39,7 @@ server: uvicorn
 curl.exe -sS -i -X GET http://127.0.0.1:8101/tasks/4
 
 HTTP/1.1 404 Not Found
-date: Thu, 05 Nov 2026 07:34:37 GMT
+date: Thu, 05 Nov 2026 07:38:07 GMT
 server: uvicorn
 content-length: 28
 content-type: application/json
@@ -47,6 +47,8 @@ content-type: application/json
 {"error":"Task 4 not found"}
 
 Actual Swagger Try it out: POST /tasks -> 201
+
+Actual Swagger Try it out: GET /tasks -> 200
 
 Actual Swagger Try it out: GET /tasks/{task_id} -> 200
 

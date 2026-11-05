@@ -28,3 +28,13 @@ This is an AI-assisted rebuild as authorized by the user; it must not be represe
 ![Actual rebuilt Swagger UI](swagger.png)
 
 Example real curl output is recorded in [verification.txt](verification.txt), including HTTP 201 create, 200 update and 204 delete.
+
+Actual curl response (full transcript in verification.txt):
+
+```http
+HTTP/1.1 201 Created
+date: Thu, 05 Nov 2026 07:38:07 GMT
+server: uvicorn
+content-length: 47
+content-type: application/json
+```
