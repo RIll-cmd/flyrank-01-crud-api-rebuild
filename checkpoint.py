@@ -1,7 +1,7 @@
 from fastapi.testclient import TestClient
 from app import app
 with TestClient(app) as c:
- assert len(c.get("/tasks").json())==3
- assert c.get("/tasks/1").status_code==200
- assert c.get("/tasks/99").status_code==404
- print("PASS list, single, missing JSON 404")
+ assert c.post("/tasks",json={"title":"New"}).status_code==201
+ assert len(c.get("/tasks").json())==4
+ assert c.post("/tasks",json={}).status_code==400
+ print("PASS create 201, list update, validation 400")

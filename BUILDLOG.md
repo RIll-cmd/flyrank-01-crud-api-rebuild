@@ -10,3 +10,7 @@ Result: PASS root and health JSON
 ## Stage 2
 Command: `python checkpoint.py`
 Result: PASS list, single, missing JSON 404
+
+## Stage 3
+Command: `python checkpoint.py`
+Result: PASS create 201, list update, validation 400
