@@ -20,7 +20,11 @@ In-memory tasks reset when the server restarts. Titles must be non-empty strings
 - [x] 200/201/204/400/404 checked at Stage 4, JSON errors.
 - [x] POST and PUT validate titles.
 - [x] OpenAPI lists all routes.
-- [ ] Browser Try-it-out full CRUD and new Swagger screenshot (pending verification).
+- [x] Actual curl and browser Try-it-out full CRUD verified; see verification.txt and new screenshot below.
 - [x] Public repository and seven real stage commits; AI-assisted provenance disclosed.
 
-The PDF asks for hand-built work. This assisted rebuild does not meet that authorship condition and must not be represented as hand-built.
+This is an AI-assisted rebuild as authorized by the user; it must not be represented as hand-built.
+
+![Actual rebuilt Swagger UI](swagger.png)
+
+Example real curl output is recorded in [verification.txt](verification.txt), including HTTP 201 create, 200 update and 204 delete.
